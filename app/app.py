@@ -54,7 +54,7 @@ st.sidebar.header("User Input Parameters")
 ticker = st.sidebar.text_input("Stock Ticker", value="NMR")
 start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime("2023-01-01"))
 end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2023-06-01"))
-n_clusters = st.sidebar.slider("Number of Clusters", min_value=2, max_value=6, value=3)
+n_clusters = st.sidebar.slider("Number of Clusters", min_value=2, max_value=10, value=3)
 
 if start_date >= end_date:
     st.error("Error: End date must be after start date.")
