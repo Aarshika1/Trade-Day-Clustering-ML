@@ -146,7 +146,7 @@ elif run_button:
 
         # Cluster distribution
         st.subheader("📊 Cluster Distribution")
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(8, 5))
         sns.countplot(x="cluster_label", data=data, ax=ax, order=cluster_summary.index)
         ax.set_title("Number of Days per Cluster")
         ax.set_xlabel("Cluster Label")
@@ -158,7 +158,7 @@ elif run_button:
 
         # Closing price over time
         st.subheader("📈 Closing Price Over Time by Cluster")
-        fig, ax = plt.subplots(figsize=(14, 5))
+        fig, ax = plt.subplots(figsize=(8, 5))
         for cluster in sorted(data["cluster"].unique()):
             cluster_data = data[data["cluster"] == cluster]
             ax.plot(cluster_data["Date"], cluster_data["Close"], label=remove_emoji(cluster_labels[cluster]))
@@ -169,7 +169,7 @@ elif run_button:
 
         # PCA plot
         st.subheader("🔍 PCA Projection of Clusters")
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=(8, 5))
         for cluster in sorted(data["cluster"].unique()):
             ax.scatter(
                 X_pca[data["cluster"] == cluster, 0],
@@ -184,7 +184,7 @@ elif run_button:
 
         # Heatmap
         st.subheader("🔥 Feature Heatmap per Cluster")
-        fig, ax = plt.subplots(figsize=(10, 4))
+        fig, ax = plt.subplots(figsize=(8, 5))
         sns.heatmap(cluster_summary, annot=True, cmap="YlGnBu", ax=ax)
         ax.set_title("Feature Heatmap per Cluster")
         ax.set_xlabel("Feature")
