@@ -11,6 +11,12 @@ import seaborn as sns
 
 sns.set_style("whitegrid")
 
+st.set_page_config(
+    page_title="Stock Trading Day Clustering",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # --- Function: Download and preprocess data ---
 @st.cache_data(show_spinner=True)
 def load_data(ticker, start_date, end_date):
