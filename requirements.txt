@@ -6,3 +6,4 @@ matplotlib
 seaborn
 ipykernel
 streamlit
+ta
